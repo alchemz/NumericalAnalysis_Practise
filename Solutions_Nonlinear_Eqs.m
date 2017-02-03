@@ -1,3 +1,10 @@
+%%
+%Step1: Input A, B, and Tolerence
+%Step2: Test if f(a)*f(b) is positive
+%Step3: get the average ofc<- a, b
+%Step4: Test if f(c)*f(c) is negative
+%Step5: Loop
+%%
 % Nummericial Solutions to Nonlinear Eqs
 function c = bisection(a,b, Tol)
 step=0;
@@ -20,6 +27,7 @@ end
 % need a ending criteria
 end
 
+%%For matlab,it requires the subfunction written below
 function f=f(x)
 f=x.^2-3*cos(x)+exp(x);
 end
