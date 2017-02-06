@@ -11,6 +11,28 @@ for i=1:100
   x0=x1;
 end
 
+%%Fixed point method
+%Input: x0(initial guess), g(X)
+%Output: x- root of f(x)=0 or x=g(x)
+%Stopping criteria: 1. if|Xn+1-Xn|<e or |Xn-g(Xn)<e| 2. sometimes it diverges, using the maximum iteration
+function x=fixedPoint(g,x0)
+Tol=1e-8;
+itn=0;
+while 1
+  x=g(x0);
+  x0=x
+  if abs(g(x0)-x0)<Tol
+    break
+  end
+  
+  if(itn>100)
+  end
+end
+
+%help function handle
+g=@x(x^2-1)/3
+x=fixedPoint(g,x0)
+
 % Finding the nontrivial root of 
 % f(x) = sin(x) - x^2
 % using the Simple Fixed-Point Iteration
@@ -32,3 +54,6 @@ end
 
 x  %the root
 n   %number of iterations
+
+
+
